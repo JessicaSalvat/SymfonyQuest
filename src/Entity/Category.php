@@ -43,6 +43,7 @@ class Category
      * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="category")
      */
     private $articles;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -66,6 +67,7 @@ class Category
         }
         return $this;
     }
+
     /**
      * @param Article $article
      * @return Category
