@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -79,22 +80,22 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route ("/blog/category/{categoryName<^[a-z0-9-]+$>}",
-     *     name="show_category")
-     * defaults={"categoryName" = null},
+     * @Route ("/blog/category/{name}",
+     *     name="category_show")
+     * defaults={"category" = null},
      * @return Response A response instance
      */
 
-    public function showByCategory(string $categoryName): Response
+    public function showByCategory(Category $category): Response
     {
-        if (!$categoryName) {
+        if (!$category) {
             throw $this
                 ->createNotFoundException('No category has been found');
         }
 
-        $category = $this->getDoctrine()
+        /*$categories = $this->getDoctrine()
             ->getRepository(Category::class)
-            ->findOneBy(['name' => mb_strtolower($categoryName)]);
+            ->findOneBy(['name' => mb_strtolower($category)]);*/
 
         $articles = $category->getArticles();
 
