@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Tag;
 use App\Entity\Article;
 use App\Entity\Category;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,9 +33,11 @@ class BlogController extends AbstractController
             );
         }
 
+
         return $this->render(
-            'blog/index.html.twig',
-            ['articles' => $articles]
+            'blog/index.html.twig', [
+                'articles' => $articles,
+            ]
         );
     }
 
@@ -81,7 +84,7 @@ class BlogController extends AbstractController
 
     /**
      * @Route ("/blog/category/{name}",
-     *     name="category_show")
+     *     name="show_category")
      * defaults={"category" = null},
      * @return Response A response instance
      */
