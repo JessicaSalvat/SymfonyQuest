@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+
+    <h1>Articles in tag {{ tag.name }}</h1>
+
+    <ul class="list-group">
+
+        {% for article in tag.articles %}
+
+            <li class="list-group-item"> {{ article.id }}<a
+                        href="{{ path('blog_show', { 'slug': article.title} ) }}"> {{ article.title }}</a></li>
+            <p>{{ article.content }}</p>
+        {% else %}
+
+            <li>No tag</li>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}
+

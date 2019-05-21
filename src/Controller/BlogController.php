@@ -3,7 +3,7 @@
 
 namespace App\Controller;
 
-
+use App\Entity\Tag;
 use App\Entity\Article;
 use App\Entity\Category;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -43,7 +43,7 @@ class BlogController extends AbstractController
      *
      * @param string $slug The slugger
      *
-     * @Route("/blog/{slug<^[a-z0-9-]+$>}",
+     * @Route("/blog/{slug}",
      *     defaults={"slug" = null},
      *     name="blog_show")
      * @return Response A response instance
@@ -113,5 +113,24 @@ class BlogController extends AbstractController
             ]
 
         );
+    }
+
+    /**
+     * @Route ("blog/tag/{name}",
+     *     name="tag_show")
+     * defaults={"tag" = null},
+     * @return Response A response instance
+     */
+
+    public function showTag (Tag $tag) : Response
+    {
+
+        return $this->render(
+            'blog/tag.html.twig',
+        [
+            'tag' => $tag,
+        ]
+        );
+
     }
 }
