@@ -20,12 +20,16 @@
         <tr><td> <a href="{{ path('show_category', {'name': "javascript"}) }}">
                     Testing showByCategory() method from BlogController to view all articles.
                 </a></td></tr>
-        <tr>  <td><a href="{{ path('category_index') }}">
-                    To add a new Category
-                </a></td></tr>
         <tr> <td> <a href="{{ path('tag_show', {'name': "development"}) }}">
                     Testing showTag() method from BlogController to view all tags.
                 </a></td></tr>
+        <tr>  <td><a href="{{ path('category_index') }}">
+                    To add a new Category
+                </a></td></tr>
+        <tr> <td> <a href="{{ path('article_index') }}">
+                    To edit an article
+                </a></td></tr>
+
         </tbody>
     </table>
 
