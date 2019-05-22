@@ -1,0 +1,23 @@
+$backColor : #e6e6ff;
+
+
+body {
+    background-color: $backColor ;
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+}
+
+h1 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: white;
+  text-decoration: none;
+}
