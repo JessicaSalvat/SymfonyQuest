@@ -1,4 +1,13 @@
+{# this form theme will be applied only to the form of this template #}
+{% form_theme form 'foundation_5_layout.html.twig' %}
+
 {{ form_start(form) }}
+<div>
+    {{ form_errors(form) }}
+</div>
+
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    <button class="btn btn-lg">{{ button_label|default('Save') }}</button>
+
 {{ form_end(form) }}
