@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Service\Mailer;
+
 
 /**
  * @Route("/article")
@@ -47,6 +47,8 @@ class ArticleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $article->setSlug($slugify->generate($article->getTitle()));
+            $author = $this->getUser();
+            $article->setAuthor($author);
             $entityManager->persist($article);
             $entityManager->flush();
 

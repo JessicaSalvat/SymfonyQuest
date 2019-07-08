@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "08c14988967beb7822ee3941e3a7368b",
+    "content-hash": "507509a48f67b9f3754de00058aa32a9",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -4706,7 +4706,7 @@
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v4.2.8",
+            "version": "v4.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",

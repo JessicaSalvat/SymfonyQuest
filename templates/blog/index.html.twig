@@ -26,7 +26,8 @@
     {% else %}
         <p>Aucun article trouvé.</p>
     {% endfor %}
-    <a href="{{ path('app_index') }}">
+    <a href="{{ path('redirect to some "app_homepage" route - of wherever you want
++     return new RedirectResponse($this->urlGenerator->generate('app_homepage'));') }}">
         Back to homepage.
     </a>
 

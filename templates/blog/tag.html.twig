@@ -10,7 +10,7 @@
         {% for article in tag.articles %}
 
             <li class="list-group-item"> {{ article.id }}<a
-                        href="{{ path('blog_show', { 'slug': article.title} ) }}"> {{ article.title }}</a></li>
+                        href="{{ path('article_show', { 'slug': article.title} ) }}"> {{ article.title }}</a></li>
             <p>{{ article.content }}</p>
         {% else %}
 
@@ -20,7 +20,7 @@
 
     </ul>
 
-    <a href="{{ path('app_index') }}">
+    <a href="{{ path('home_index') }}">
         Back to homepage.
     </a>
 
